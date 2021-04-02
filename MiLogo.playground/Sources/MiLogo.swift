@@ -17,7 +17,7 @@ public struct MiLogo: View {
 
 public struct MiLogoGrid: View {
     public init() {}
-    var gridItemLayout: [GridItem] = Array(repeating: GridItem(.fixed(90), spacing: 0), count: 6)
+    let gridItemLayout: [GridItem] = Array(repeating: GridItem(.fixed(90), spacing: 0), count: 6)
     public var body: some View {
         LazyVGrid(columns: gridItemLayout, spacing: 0) {
             ForEach(Array(stride(from: 2, through: 4.3, by: 0.1)), id: \.self) { n in
