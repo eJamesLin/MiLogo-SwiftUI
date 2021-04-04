@@ -9,9 +9,9 @@ public struct MiLogo: View {
         Text("MI")
             .foregroundColor(.black)
             .font(Font.custom("Babylon Industrial", size: 14))
-            .padding(10)
             .frame(width: 40, height: 40)
-            .background(SuperEllipse(n: n).fill(Color.white))
+            .background(Color.white)
+            .clipShape(SuperEllipse(n: n))
     }
 }
 
@@ -23,6 +23,7 @@ public struct MiLogoGrid: View {
             ForEach(Array(stride(from: 2, through: 4.3, by: 0.1)), id: \.self) { n in
                 VStack {
                     MiLogo(n: CGFloat(n))
+                        .padding(.bottom, 5)
                     Text("n: " + String(format: "%.1f", n))
                         .foregroundColor(.white)
                         .font(.system(size: 12))
